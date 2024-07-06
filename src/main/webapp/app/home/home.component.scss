@@ -2,22 +2,238 @@
 Main page styles
 ========================================================================== */
 
-.hipster {
-  display: inline-block;
-  width: 347px;
-  height: 497px;
-  background: url('../../content/images/jhipster_family_member_2.svg') no-repeat center top;
-  background-size: contain;
+// .hipster {
+//   display: inline-block;
+//   width: 347px;
+//   height: 497px;
+//   background: url('../../content/images/jhipster_family_member_2.svg') no-repeat center top;
+//   background-size: contain;
+// }
+
+// /* wait autoprefixer update to allow simple generation of high pixel density media query */
+// @media only screen and (-webkit-min-device-pixel-ratio: 2),
+// only screen and (-moz-min-device-pixel-ratio: 2),
+// only screen and (-o-min-device-pixel-ratio: 2/1),
+// only screen and (min-resolution: 192dpi),
+// only screen and (min-resolution: 2dppx) {
+//   .hipster {
+//     background: url('../../content/images/jhipster_family_member_2.svg') no-repeat center top;
+//     background-size: contain;
+//   }
+// }
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
 }
 
-/* wait autoprefixer update to allow simple generation of high pixel density media query */
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (-moz-min-device-pixel-ratio: 2),
-  only screen and (-o-min-device-pixel-ratio: 2/1),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-  .hipster {
-    background: url('../../content/images/jhipster_family_member_2.svg') no-repeat center top;
-    background-size: contain;
+.main-background {
+  // background-image: url(../../content/images/private-industrial-iot-network.jpg);
+  // background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+.header-main {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+
+  &-default {
+    background-color: transparent;
+    border-color: transparent;
+    width: 100%;
   }
+
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .navbar-nav {
+      a {
+        text-decoration: none;
+
+        h2 {
+          font-size: 24px;
+          color: #e72929;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .navbar-header {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 5px 5px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .nav {
+    padding-left: 0;
+    list-style: none;
+
+    &-navbar {
+      margin: 7.5px -15px;
+
+      a {
+        color: #fff;
+        font-weight: 800;
+        font-size: 24px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .navbar-btn {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: -20px;
+    border-radius: 14px;
+  }
+}
+
+.btn-user {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #374957;
+  list-style: none;
+
+  &:hover .list-option-user {
+    display: block;
+  }
+
+  .list-option-user {
+    display: none;
+    position: absolute;
+    text-decoration: none;
+    // right: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 9rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    margin-top: 10px;
+    min-width: 120px;
+    padding: 10px 0;
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #333;
+        font-weight: 500;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          color: #000;
+          transform: scale(1.1);
+        }
+      }
+
+      &.btn-logout a {
+        color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+
+        &:hover {
+          color: darken(#ed2b2a, 10%);
+        }
+      }
+    }
+
+    hr {
+      margin: 5px 0;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+  }
+}
+
+.table-container {
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  z-index: 100;
+  margin: 0 auto;
+  // padding-right: 40px;
+
+  tbody {
+    background-color: rgba(221, 221, 221, 0.5);
+    border-radius: 12px;
+  }
+
+  td {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 2rem;
+  }
+}
+
+.article {
+  background-color: #ffffff;
+  margin: 0 0 20px;
+  padding: 5px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 200px;
+  height: 150px;
+  transition: transform 0.3s ease;
+
+  &__category {
+    border-radius: 12px;
+    width: 6rem;
+    display: inline-block;
+    margin: 10px 0 10px;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.075rem;
+    text-transform: uppercase;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+  }
+
+  &__title {
+    padding-top: 2px;
+    margin: 0 0 10px;
+    color: #444;
+    font-size: 1.55rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+  }
+
+  &__excerpt {
+    color: #666;
+    line-height: 1.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+.article:hover {
+  transform: scale(1.1);
 }
