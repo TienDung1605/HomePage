@@ -16,11 +16,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.accountService.identity().subscribe(account => (this.account = account));
-    // this.login()
   }
 
   login(): void {
     this.loginService.login();
+  }
+
+  logout(): void {
+    this.loginService.logout();
   }
 
   linkMRP(): void {
@@ -69,5 +72,13 @@ export class HomeComponent implements OnInit {
 
   linkDoiTra(): void {
     window.open('http://192.168.68.77:8086/', '_blank');
+  }
+
+  linkProfile(): void {
+    window.open('http://192.168.68.77:8085/', '_blank');
+  }
+
+  linkQuanLyThietBi(): void {
+    window.open('http://192.168.68.77:8123/', '_blank');
   }
 }
