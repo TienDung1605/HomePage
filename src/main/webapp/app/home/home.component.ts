@@ -3,6 +3,25 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'app/login/login.service';
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/auth/account.model';
+import {
+  faRepeat,
+  faBarcode,
+  faBoxArchive,
+  faBridgeCircleExclamation,
+  faFileLines,
+  faFolderOpen,
+  faGears,
+  faMessage,
+  faNetworkWired,
+  faShare,
+  faShield,
+  faDatabase,
+  faDesktop,
+  faEnvelope,
+  faUserGroup,
+  faCircleExclamation,
+  faChartLine,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'jhi-home',
@@ -11,6 +30,25 @@ import { Account } from 'app/core/auth/account.model';
 })
 export class HomeComponent implements OnInit {
   account: Account | null = null;
+  faBarcode = faBarcode;
+  faFolderOpen = faFolderOpen;
+  faGears = faGears;
+  faNetworkWired = faNetworkWired;
+  faShield = faShield;
+  faFileLines = faFileLines;
+  faBoxArchive = faBoxArchive;
+  faBridgeCircleExclamation = faBridgeCircleExclamation;
+  faMessage = faMessage;
+  faShare = faShare;
+  faRepeat = faRepeat;
+  faDatabase = faDatabase;
+  faDesktop = faDesktop;
+  faEnvelope = faEnvelope;
+  faUserGroup = faUserGroup;
+  faCircleExclamation = faCircleExclamation;
+  faChartLine = faChartLine;
+
+  isMenuVisible = false;
 
   constructor(private accountService: AccountService, private loginService: LoginService) {}
 
@@ -80,5 +118,13 @@ export class HomeComponent implements OnInit {
 
   linkQuanLyThietBi(): void {
     window.open('http://192.168.68.77:8123/', '_blank');
+  }
+
+  showMenu(): void {
+    this.isMenuVisible = true;
+  }
+
+  hideMenu(): void {
+    this.isMenuVisible = false;
   }
 }

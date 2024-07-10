@@ -21,7 +21,7 @@
               <button (click)="login()" class="btn btn-success" data-cy="login" id="loginButton">Đăng nhập</button>
             </div>
             <ul *ngSwitchCase="true" class="btn btn-user navbar-btn navbar-right">
-              <li>
+              <li (mouseenter)="showMenu()" (mouseleave)="hideMenu()">
                 <fa-icon icon="user"></fa-icon>
                 <ul class="list-option-user">
                   <li style="border-bottom: 1px #ddd solid">
@@ -48,117 +48,110 @@
   <table *ngSwitchCase="true" class="table-container">
     <tbody>
       <tr>
-        <td style="padding-left: 50px">
-          <article class="article" (click)="linkMRP()">
-            <h3 class="article__category" style="background-color: #e9a89b">mrp</h3>
-            <h2 class="article__title">MRP</h2>
-            <p class="article__excerpt">Quản lý kế hoạch nguyên vật liệu</p>
+        <!-- <td style="padding-left: 50px">
+          <article class="article" (click)="linkMRP()" style="background-color: #e9a89b">
+            <fa-icon [icon]="faGears"></fa-icon>
           </article>
+          <h2 class="article__title">MRP</h2>
+        </td> -->
+
+        <td>
+          <article class="article" (click)="linkPlanning()" style="background-color: #d875c7">
+            <fa-icon [icon]="faFolderOpen"></fa-icon>
+          </article>
+          <h1 class="article__title">PLANNING</h1>
         </td>
 
         <td>
-          <article class="article" (click)="linkPlanning()">
-            <h3 class="article__category" style="background-color: #d875c7">planning</h3>
-            <h2 class="article__title">PLANNING</h2>
-            <p class="article__excerpt">Phần mềm Quản lý kế hoạch sản xuất</p>
+          <article class="article" (click)="linkQMS()" style="background-color: #7aa2e3">
+            <fa-icon [icon]="faChartLine"></fa-icon>
           </article>
+          <h1 class="article__title">QMS</h1>
         </td>
 
         <td>
-          <article class="article" (click)="linkDOC()">
-            <h3 class="article__category" style="background-color: #912bbc">document</h3>
-            <h2 class="article__title">Document</h2>
-            <p class="article__excerpt">Kho tài liệu</p>
+          <article class="article" (click)="linkSCADA()" style="background-color: #135d66">
+            <fa-icon [icon]="faNetworkWired"></fa-icon>
           </article>
+          <h1 class="article__title">SCADA</h1>
         </td>
 
         <td>
-          <article class="article" (click)="linkForum()">
-            <h3 class="article__category" style="background-color: #b3c8cf">forums</h3>
-            <h2 class="article__title">Rang Dong's Forums</h2>
-            <p class="article__excerpt">Rạng Đông Forumns</p>
+          <article class="article" (click)="linkDoiTra()" style="background-color: #34c759">
+            <fa-icon [icon]="faRepeat"></fa-icon>
           </article>
+          <h1 class="article__title">Đổi trả</h1>
         </td>
 
         <td>
-          <article class="article" (click)="linkWarning()">
-            <h3 class="article__category" style="background-color: #e72929">warning</h3>
-            <h2 class="article__title">Warning</h2>
-            <p class="article__excerpt">Hệ thống cảnh báo</p>
+          <article class="article" (click)="linkProfile()" style="background-color: #e68369">
+            <fa-icon [icon]="faBarcode"></fa-icon>
           </article>
+          <h1 class="article__title">Profile</h1>
         </td>
 
-        <td>
-          <article class="article" (click)="linkReport()">
-            <h3 class="article__category" style="background-color: #ffc94a">report</h3>
-            <h2 class="article__title">Report</h2>
-            <p class="article__excerpt">Hệ thống báo cáo</p>
+        <!-- <td>
+          <article class="article" (click)="linkWarning()" style="background-color: #e72929">
+            <fa-icon [icon]="faCircleExclamation"></fa-icon>
           </article>
-        </td>
-        <td>
-          <article class="article" (click)="linkWMS()">
-            <h3 class="article__category" style="background-color: #97e7e1">wms</h3>
-            <h2 class="article__title">WMS</h2>
-            <p class="article__excerpt">Phần mềm quản lý kho</p>
+          <h1 class="article__title">Warning</h1>
+        </td> -->
+
+        <!-- <td style="padding-right: 50px">
+          <article class="article" (click)="linkWMS()" style="background-color: #97e7e1">
+            <fa-icon [icon]="faBoxArchive"></fa-icon>
           </article>
-        </td>
+          <h1 class="article__title">WMS</h1>
+        </td> -->
       </tr>
       <tr>
-        <td>
-          <article class="article" (click)="linkR2()">
-            <h3 class="article__category" style="background-color: #8decb4">r2</h3>
-            <h2 class="article__title">R2</h2>
-            <p class="article__excerpt">Phần mềm Khuyến nghị đề nghị lĩnh nguyên vật liệu</p>
+        <!-- <td style="padding-left: 50px">
+          <article class="article" (click)="linkR2()" style="background-color: #8decb4">
+            <fa-icon [icon]="faEnvelope"></fa-icon>
           </article>
+          <h1 class="article__title">R2</h1>
+        </td> -->
+
+        <!-- <td>
+          <article class="article" (click)="linkQMS()" style="background-color: #7aa2e3">
+            <fa-icon [icon]="faChartLine"></fa-icon>
+          </article>
+          <h1 class="article__title">QMS</h1>
+        </td> -->
+
+        <td>
+          <article class="article" (click)="linkMaintance()" style="background-color: #704264">
+            <fa-icon [icon]="faDesktop"></fa-icon>
+          </article>
+          <h1 class="article__title">Maintaince</h1>
         </td>
 
         <td>
-          <article class="article" (click)="linkQMS()">
-            <h3 class="article__category" style="background-color: #7aa2e3">qms</h3>
-            <h2 class="article__title">QMS</h2>
-            <p class="article__excerpt">Phần mềm kiểm soát chất lượng</p>
+          <article class="article" (click)="linkReport()" style="background-color: #ffc94a">
+            <fa-icon [icon]="faMessage"></fa-icon>
           </article>
+          <h1 class="article__title">Report</h1>
+        </td>
+        <td>
+          <article class="article" (click)="linkDOC()" style="background-color: #912bbc">
+            <fa-icon [icon]="faFileLines"></fa-icon>
+          </article>
+          <h1 class="article__title">Document</h1>
         </td>
 
         <td>
-          <article class="article" (click)="linkSCADA()">
-            <h3 class="article__category" style="background-color: #135d66">scada</h3>
-            <h2 class="article__title">SCADA</h2>
-            <p class="article__excerpt">Nền tảng IOT Platform</p>
+          <article class="article" (click)="linkForum()" style="background-color: #b3c8cf">
+            <fa-icon [icon]="faUserGroup"></fa-icon>
           </article>
+          <h1 class="article__title">RD Forums</h1>
         </td>
 
-        <td>
-          <article class="article" (click)="linkMaintance()">
-            <h3 class="article__category" style="background-color: #704264">maintance</h3>
-            <h2 class="article__title">Maintaince</h2>
-            <p class="article__excerpt">Bảo trì</p>
+        <!-- <td style="padding-right: 50px">
+          <article class="article" (click)="linkQuanLyThietBi()" style="background-color: #ff4191">
+            <fa-icon [icon]="faDatabase"></fa-icon>
           </article>
-        </td>
-
-        <td>
-          <article class="article" (click)="linkDoiTra()">
-            <h3 class="article__category" style="background-color: #34c759">GUARANTEE</h3>
-            <h2 class="article__title">Đổi trả</h2>
-            <p class="article__excerpt">Hệ thống bảo hành sản phẩm</p>
-          </article>
-        </td>
-
-        <td>
-          <article class="article" (click)="linkProfile()">
-            <h3 class="article__category" style="background-color: #e68369">Profile</h3>
-            <h2 class="article__title">Profile</h2>
-            <p class="article__excerpt">Hệ thống quản lý thông tin tem</p>
-          </article>
-        </td>
-
-        <td style="padding-right: 50px">
-          <article class="article" (click)="linkQuanLyThietBi()">
-            <h3 class="article__category" style="background-color: #ff4191">maintain</h3>
-            <h2 class="article__title">Quản lý thiết bị</h2>
-            <p class="article__excerpt">Hệ thống quản lý thiết bị</p>
-          </article>
-        </td>
+          <h1 class="article__title">Maintain</h1>
+        </td> -->
       </tr>
     </tbody>
   </table>
